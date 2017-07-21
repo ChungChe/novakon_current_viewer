@@ -49,6 +49,14 @@ function update_amchart(json_data) {
 		"autoMarginOffset": 20,
 		"marginTop": 7,
 		"dataProvider": chart_data,
+        "legend": {
+            "align": "center",
+            "autoMargins": false,
+            "borderAlpha": 0.2,
+            "equalWidths": false,
+            "valueAlign": "left",
+            "valueWidth": 100,
+        },
 		"valueAxes": [{
             "id": "currentAxis",
 			"axisAlpha": 0.2,
@@ -57,130 +65,103 @@ function update_amchart(json_data) {
         }],
 		"mouseWheelZoomEnabled": true,
 		"graphs": [{
-			"balloonText": "1: [[value]] A",
+			"balloonText": "1: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "current",
+			"title": "第1站",
 			"valueField": "value1",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "2: [[value]] A",
+			"balloonText": "2: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第2站",
 			"valueField": "value2",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "3: [[value]] A",
+			"balloonText": "3: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第3站",
 			"valueField": "value3",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "4: [[value]] A",
+			"balloonText": "4: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第4站",
 			"valueField": "value4",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "5: [[value]] A",
+			"balloonText": "5: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第5站",
 			"valueField": "value5",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "6: [[value]] A",
+			"balloonText": "6: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第6站",
 			"valueField": "value6",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "7: [[value]] A",
+			"balloonText": "7: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第7站",
 			"valueField": "value7",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "8: [[value]] A",
+			"balloonText": "8: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第8站",
 			"valueField": "value8",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
 		}, {
-			"balloonText": "9: [[value]] A",
+			"balloonText": "9: [[value]]",
 			"bullet": "round",
 			"bulletBorderAlpha": 1,
 			"bulletColor": "#FFFFFF",
 			"hideBulletsCount": 50,
-			"title": "temp",
+			"title": "第9站",
 			"valueField": "value9",
 			"useLineColorForBulletBorder": true,
-			"balloon":{
-				"drop":true
-			},
-            "fillAlphas": 0.05,
+            "fillAlphas": 0.0,
             "valueAxis": "currentAxis",
         }],
 		"chartScrollbar": {
@@ -188,6 +169,17 @@ function update_amchart(json_data) {
 			"scrollbarHeight": 40
 		},
 		"chartCursor": {
+			"categoryBalloonAlpha": 0.6,
+			"categoryBalloonColor": "#FF0000",
+			"categoryBalloonFunction": function(d) {
+				var year = d.getFullYear();
+				var month = d.getMonth();
+				var day = d.getDate();
+				var hr = d.getHours();
+				var min = d.getMinutes();
+				var sec = d.getSeconds();
+				return [year, month, day].join('/') + ' ' + [hr, min, sec].join(':');
+			}
 		},
 		"categoryField": "date",
 		"categoryAxis": {
